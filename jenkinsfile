@@ -1,0 +1,33 @@
+pipeline {
+    agent any 
+
+    environment {
+        IMAGE_NAME = "vinod/node-app"
+    }
+    stages{
+        stage('checkout'){
+            steps{
+                git branch : 'main', url: ''
+
+            }
+        }
+    
+        stage('install dependencies'){
+            steps{
+            sh "npm install"
+
+            }
+        }
+        stage('test'){
+            steps{
+                sh "npn test"
+            }
+        }
+        stage('Build docker image'){
+            steps{
+                sh ' docker build -t '
+            }
+        }
+
+    }
+}
