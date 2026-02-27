@@ -20,7 +20,7 @@ pipeline {
         }
         stage('test'){
             steps{
-                sh "npn test"
+                sh "npm test"
             }
         }
         stage('Build docker image'){
