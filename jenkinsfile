@@ -7,7 +7,7 @@ pipeline {
     stages{
         stage('checkout'){
             steps{
-                git branch : 'main', url: ''
+                git branch : 'main', url: 'https://github.com/vinod-o/node-js.git'
 
             }
         }
@@ -25,7 +25,7 @@ pipeline {
         }
         stage('Build docker image'){
             steps{
-                sh ' docker build -t '
+                sh ' docker build -t ${IMAGE_NAME} .'
             }
         }
 
