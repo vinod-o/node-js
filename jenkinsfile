@@ -2,7 +2,7 @@ pipeline {
     agent any 
 
     environment {
-        IMAGE_NAME = "vinod/node-app1"
+        IMAGE_NAME = "vinod/node-app2"
     }
     stages{
         stage('checkout'){
